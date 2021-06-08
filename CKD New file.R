@@ -384,3 +384,115 @@ ggplot(longdata, aes(x = ID, y = Glucose))+ geom_point() + facet_wrap( ~ Status)
 ggplot(imp_com3, aes(x = ID, y = Glucose))+ geom_point() + facet_wrap( ~ Status)
 
 
+#Subset the data to run t tests
+subset_Case <- subset(longdata, Status == "0")
+subset_Control <- subset(longdata, Status == "1")
+
+subset_Case_Male <- subset(subset_Case, Gender == "Male")
+subset_Case_Female <- subset(subset_Case, Gender == "Female")
+subset_Control_Male <- subset(subset_Control, Gender == "Male")
+subset_Control_Female <- subset(subset_Control, Gender == "Female")
+
+subset_Case_Male_Asian <- subset(subset_Case_Male, Race == "Asian")
+subset_Case_Female_Asian <- subset(subset_Case_Female, Race == "Asian")
+subset_Control_Female_Asian <- subset(subset_Control_Female, Race == "Asian")
+subset_Control_Male_Asian <- subset(subset_Control_Male, Race == "Asian")
+
+subset_Case_Male_Black <- subset(subset_Case_Male, Race == "Black")
+subset_Case_Female_Black <- subset(subset_Case_Female, Race == "Black")
+subset_Control_Female_Black <- subset(subset_Control_Female, Race == "Black")
+subset_Control_Male_Black <- subset(subset_Control_Male, Race == "Black")
+
+subset_Case_Male_White <- subset(subset_Case_Male, Race == "White")
+subset_Case_Female_White <- subset(subset_Case_Female, Race == "White")
+subset_Control_Female_White <- subset(subset_Control_Female, Race == "White")
+subset_Control_Male_White <- subset(subset_Control_Male, Race == "White")
+
+subset_Case_Male_Hispanic <- subset(subset_Case_Male, Race == "Hispanic")
+subset_Case_Female_Hispanic <- subset(subset_Case_Female, Race == "Hispanic")
+subset_Control_Female_Hispanic <- subset(subset_Control_Female, Race == "Hispanic")
+subset_Control_Male_Hispanic <- subset(subset_Control_Male, Race == "Hispanic")
+
+subset_Case_Male_Unknown <- subset(subset_Case_Male, Race == "Unknown")
+subset_Case_Female_Unknown <- subset(subset_Case_Female, Race == "Unknown")
+subset_Control_Female_Unknown <- subset(subset_Control_Female, Race == "Unknown")
+subset_Control_Male_Unknown <- subset(subset_Control_Male, Race == "Unknown")
+
+#t-tests
+
+t.test(subset_Case_Male_Asian$Glucose, subset_Control_Male_Asian$Glucose, conf.level = 0.95)
+t.test(subset_Case_Male_Asian$Creatinine, subset_Control_Male_Asian$Creatinine, conf.level = 0.95)
+t.test(subset_Case_Male_Asian$LDL, subset_Control_Male_Asian$LDL, conf.level = 0.95)
+t.test(subset_Case_Male_Asian$HBG, subset_Control_Male_Asian$HBG, conf.level = 0.95)
+t.test(subset_Case_Male_Asian$SBP, subset_Control_Male_Asian$SBP, conf.level = 0.95)
+t.test(subset_Case_Male_Asian$DBP, subset_Control_Male_Asian$DBP, conf.level = 0.95)
+
+t.test(subset_Case_Female_Asian$Glucose, subset_Control_Female_Asian$Glucose, conf.level = 0.95)
+t.test(subset_Case_Female_Asian$Creatinine, subset_Control_Female_Asian$Creatinine, conf.level = 0.95)
+t.test(subset_Case_Female_Asian$LDL, subset_Control_Female_Asian$LDL, conf.level = 0.95)
+t.test(subset_Case_Female_Asian$HBG, subset_Control_Female_Asian$HBG, conf.level = 0.95)
+t.test(subset_Case_Female_Asian$SBP, subset_Control_Female_Asian$SBP, conf.level = 0.95)
+t.test(subset_Case_Female_Asian$DBP, subset_Control_Female_Asian$DBP, conf.level = 0.95)
+
+t.test(subset_Case_Male_Black$Glucose, subset_Control_Male_Black$Glucose, conf.level = 0.95)
+t.test(subset_Case_Male_Black$Creatinine, subset_Control_Male_Black$Creatinine, conf.level = 0.95)
+t.test(subset_Case_Male_Black$LDL, subset_Control_Male_Black$LDL, conf.level = 0.95)
+t.test(subset_Case_Male_Black$HBG, subset_Control_Male_Black$HBG, conf.level = 0.95)
+t.test(subset_Case_Male_Black$SBP, subset_Control_Male_Black$SBP, conf.level = 0.95)
+t.test(subset_Case_Male_Black$DBP, subset_Control_Male_Black$DBP, conf.level = 0.95)
+
+t.test(subset_Case_Female_Black$Glucose, subset_Control_Female_Black$Glucose, conf.level = 0.95)
+t.test(subset_Case_Female_Black$Creatinine, subset_Control_Female_Black$Creatinine, conf.level = 0.95)
+t.test(subset_Case_Female_Black$LDL, subset_Control_Female_Black$LDL, conf.level = 0.95)
+t.test(subset_Case_Female_Black$HBG, subset_Control_Female_Black$HBG, conf.level = 0.95)
+t.test(subset_Case_Female_Black$SBP, subset_Control_Female_Black$SBP, conf.level = 0.95)
+t.test(subset_Case_Female_Black$DBP, subset_Control_Female_Black$DBP, conf.level = 0.95)
+
+t.test(subset_Case_Male_White$Glucose, subset_Control_Male_White$Glucose, conf.level = 0.95)
+t.test(subset_Case_Male_White$Creatinine, subset_Control_Male_White$Creatinine, conf.level = 0.95)
+t.test(subset_Case_Male_White$LDL, subset_Control_Male_White$LDL, conf.level = 0.95)
+t.test(subset_Case_Male_White$HBG, subset_Control_Male_White$HBG, conf.level = 0.95)
+t.test(subset_Case_Male_White$SBP, subset_Control_Male_White$SBP, conf.level = 0.95)
+t.test(subset_Case_Male_White$DBP, subset_Control_Male_White$DBP, conf.level = 0.95)
+
+t.test(subset_Case_Female_White$Glucose, subset_Control_Female_White$Glucose, conf.level = 0.95)
+t.test(subset_Case_Female_White$Creatinine, subset_Control_Female_White$Creatinine, conf.level = 0.95)
+t.test(subset_Case_Female_White$LDL, subset_Control_Female_White$LDL, conf.level = 0.95)
+t.test(subset_Case_Female_White$HBG, subset_Control_Female_White$HBG, conf.level = 0.95)
+t.test(subset_Case_Female_White$SBP, subset_Control_Female_White$SBP, conf.level = 0.95)
+t.test(subset_Case_Female_White$DBP, subset_Control_Female_White$DBP, conf.level = 0.95)
+
+t.test(subset_Case_Male_Hispanic$Glucose, subset_Control_Male_Hispanic$Glucose, conf.level = 0.95)
+t.test(subset_Case_Male_Hispanic$Creatinine, subset_Control_Male_Hispanic$Creatinine, conf.level = 0.95)
+t.test(subset_Case_Male_Hispanic$LDL, subset_Control_Male_Hispanic$LDL, conf.level = 0.95)
+t.test(subset_Case_Male_Hispanic$HBG, subset_Control_Male_Hispanic$HBG, conf.level = 0.95)
+t.test(subset_Case_Male_Hispanic$SBP, subset_Control_Male_Hispanic$SBP, conf.level = 0.95)
+t.test(subset_Case_Male_Hispanic$DBP, subset_Control_Male_Hispanic$DBP, conf.level = 0.95)
+
+t.test(subset_Case_Female_Hispanic$Glucose, subset_Control_Female_Hispanic$Glucose, conf.level = 0.95)
+t.test(subset_Case_Female_Hispanic$Creatinine, subset_Control_Female_Hispanic$Creatinine, conf.level = 0.95)
+t.test(subset_Case_Female_Hispanic$LDL, subset_Control_Female_Hispanic$LDL, conf.level = 0.95)
+t.test(subset_Case_Female_Hispanic$HBG, subset_Control_Female_Hispanic$HBG, conf.level = 0.95)
+t.test(subset_Case_Female_Hispanic$SBP, subset_Control_Female_Hispanic$SBP, conf.level = 0.95)
+t.test(subset_Case_Female_Hispanic$DBP, subset_Control_Female_Hispanic$DBP, conf.level = 0.95)
+
+t.test(subset_Case_Male_Unknown$Glucose, subset_Control_Male_Unknown$Glucose, conf.level = 0.95)
+t.test(subset_Case_Male_Unknown$Creatinine, subset_Control_Male_Unknown$Creatinine, conf.level = 0.95)
+t.test(subset_Case_Male_Unknown$LDL, subset_Control_Male_Unknown$LDL, conf.level = 0.95)
+t.test(subset_Case_Male_Unknown$HBG, subset_Control_Male_Unknown$HBG, conf.level = 0.95)
+t.test(subset_Case_Male_Unknown$SBP, subset_Control_Male_Unknown$SBP, conf.level = 0.95)
+t.test(subset_Case_Male_Unknown$DBP, subset_Control_Male_Unknown$DBP, conf.level = 0.95)
+
+t.test(subset_Case_Female_Unknown$Glucose, subset_Control_Female_Unknown$Glucose, conf.level = 0.95)
+t.test(subset_Case_Female_Unknown$Creatinine, subset_Control_Female_Unknown$Creatinine, conf.level = 0.95)
+t.test(subset_Case_Female_Unknown$LDL, subset_Control_Female_Unknown$LDL, conf.level = 0.95)
+t.test(subset_Case_Female_Unknown$HBG, subset_Control_Female_Unknown$HBG, conf.level = 0.95)
+t.test(subset_Case_Female_Unknown$SBP, subset_Control_Female_Unknown$SBP, conf.level = 0.95)
+t.test(subset_Case_Female_Unknown$DBP, subset_Control_Female_Unknown$DBP, conf.level = 0.95)
+
+t.test(subset_Male$HBG, subset_Female$HBG, conf.level = 0.95)
+t.test(subset_Case_Male$LDL, subset_Case_Female$LDL, conf.level = 0.95)
+t.test(subset_Control_Male$LDL, subset_Control_Female$LDL, conf.level = 0.95)
+
+
+
